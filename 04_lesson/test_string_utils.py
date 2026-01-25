@@ -3,7 +3,8 @@ from string_utils import StringUtils
 
 utils = StringUtils()
 
-#capitalize
+
+# capitalize
 
 @pytest.mark.parametrize("value, expected", [
     ("skypro", "Skypro"),
@@ -24,7 +25,7 @@ def test_capitalize_none_raises():
         utils.capitalize(None)
 
 
-#trim 
+# trim
 
 @pytest.mark.parametrize("value, expected", [
     ("   skypro", "skypro"),
@@ -50,7 +51,7 @@ def test_trim_none_raises():
         utils.trim(None)
 
 
-#contains 
+# contains
 
 @pytest.mark.parametrize("string, symbol", [
     ("SkyPro", "S"),
@@ -76,7 +77,7 @@ def test_contains_none_raises():
         utils.contains(None, "a")
 
 
-#delete_symbol 
+# delete_symbol
 
 @pytest.mark.parametrize("string, symbol, expected", [
     ("SkyPro", "k", "SyPro"),
