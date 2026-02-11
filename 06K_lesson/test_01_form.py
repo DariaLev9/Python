@@ -23,7 +23,8 @@ def test_01_form():
         driver.find_element(By.NAME, "job-position").send_keys("QA")
         driver.find_element(By.NAME, "company").send_keys("SkyPro")
 
-        driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
+        wait.until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()
 
         zip_div = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#zip-code")))
         assert "alert-danger" in zip_div.get_attribute("class")
